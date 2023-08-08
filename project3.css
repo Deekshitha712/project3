@@ -1,0 +1,132 @@
+body{
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showcase::after{
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image:url(https://c.pxhere.com/photos/23/ea/apple_black_and_white_camera_coder_coffee_computer_cup_desk-928093.jpg!d);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter:blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after{
+    filter: blur(10px);
+    -webkit-filter:blur(0px);
+}
+
+.showcase:hover .content{
+    filter: blur(2px);
+    -webkit-filter:blur(2px);
+}
+
+.content{
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.content .logo{
+    height: 180px;
+    width: 180px;
+}
+
+.content .title{
+    font-size: 40px;
+    margin-top: 16px;
+}
+
+.content .text{
+    line-height: 1.7;
+    margin-top: 16px;
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 40px 16px;
+}
+
+.grid-3{
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.grid-2{
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.about{
+    background: white;
+    color: black;
+}
+
+.dark{
+    background: black;
+    color: white;
+}
+
+@media(max-width:560px){
+.showcase::after{
+    height: 50vh;
+}
+
+.content{
+    top: 5%;
+    margin-top: 5px;
+}
+
+.content .logo{
+    height: 140px;
+    width: 140px;
+}
+
+.content .text{
+    display: none;
+}
+
+.grid-2,
+.grid-3{
+    grid-template-columns: 1fr;
+}
+
+.services div{
+    border-bottom: grey dashed 1px;
+    padding: 24px 16px;
+}
+}
+
+@media(max-height:500px){
+    .content .title,
+    .content .text{
+        display: none;
+    }
+
+    .content{
+        top: 0;
+    }
+}
